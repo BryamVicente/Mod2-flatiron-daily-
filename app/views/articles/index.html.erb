@@ -1,0 +1,9 @@
+<h1>Articles index</h1>
+
+<ul>
+<% @articles.each do |article| %>
+<li><%= link_to article.get_sports_news_title, article_path(article) %> </li>
+</ul>
+<% end %>
+
+

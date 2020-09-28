@@ -1,0 +1,10 @@
+<h1>Favorites#index</h1>
+
+
+<ol>
+    <% @favorites.each do |fav| %>
+        <li>
+            <%= fav.article.title %>
+        </li>
+    <% end %>
+</ol>
