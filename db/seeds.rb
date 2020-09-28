@@ -8,4 +8,7 @@
 
 
 
-     
+Interest.destroy_all
+
+Interest.create(topic: "sports")
+sports_title = NewsService.new
