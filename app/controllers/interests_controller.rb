@@ -13,4 +13,7 @@ class InterestsController < ApplicationController
 
   def create
   end
+
+  def title
+  end
 end
