@@ -1,9 +1,66 @@
 <h1>Articles index</h1>
-
+<h2> General: </h2>
 <ul>
 <% @articles.each do |article| %>
-<li><%= link_to article.get_sports_news_title, article_path(article) %> </li>
-</ul>
+    <% if article.category == "General" %>
+        <li><%= link_to article.title, article_path(article) %> </li>
+    <% end %>
 <% end %>
+</ul>
+
+<h2> Sports: </h2>
+<ul>
+<% @articles.each do |article| %>
+    <% if article.category == "Sports" %>
+        <li><%= link_to article.title, article_path(article) %> </li>
+    <% end %>
+<% end %>
+</ul>
+
+<h2> Entertainment: </h2>
+<ul>
+<% @articles.each do |article| %>
+    <% if article.category == "Entertainment" %>
+        <li><%= link_to article.title, article_path(article) %> </li>
+    <% end %>
+<% end %>
+</ul>
+
+<h2> Business: </h2>
+<ul>
+<% @articles.each do |article| %>
+    <% if article.category == "Business" %>
+        <li><%= link_to article.title, article_path(article) %> </li>
+    <% end %>
+<% end %>
+</ul>
+
+<h2> Health: </h2>
+<ul>
+<% @articles.each do |article| %>
+    <% if article.category == "Health" %>
+        <li><%= link_to article.title, article_path(article) %> </li>
+    <% end %>
+<% end %>
+</ul>
+
+<h2> Technology: </h2>
+<ul>
+<% @articles.each do |article| %>
+    <% if article.category == "Technology" %>
+        <li><%= link_to article.title, article_path(article) %> </li>
+    <% end %>
+<% end %>
+</ul>
+
+<h2> Science: </h2>
+<ul>
+<% @articles.each do |article| %>
+    <% if article.category == "Science" %>
+        <li><%= link_to article.title, article_path(article) %> </li>
+    <% end %>
+<% end %>
+</ul>
+
 
 

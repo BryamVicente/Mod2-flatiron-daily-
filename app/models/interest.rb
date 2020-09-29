@@ -26,6 +26,6 @@ class Interest < ApplicationRecord
     #     end
     # end
 
-
     
+
 end

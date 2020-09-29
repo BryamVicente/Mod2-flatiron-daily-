@@ -19,8 +19,9 @@ ActiveRecord::Schema.define(version: 2020_09_28_180152) do
     t.string "author"
     t.string "description"
     t.string "content"
-    t.string "publishedat"
+    t.string "publishedAt"
     t.string "url"
+    t.string "urlToImage"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
