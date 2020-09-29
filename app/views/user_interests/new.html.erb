@@ -1,13 +1,7 @@
-<h1>UserInterests#new</h1>
+<h1>Userinterests#new</h1>
 
-<%= form_for @user_interest do |f| %>
-  <%= f.label :user_id %>
-  <%= f.collection_select :user_id, User.all, :id, :name  %>
-<br>
 <%= form_for @user_interest do |f| %>
   <%= f.label :interest_id %>
   <%= f.collection_select :interest_id, Interest.all, :id, :topic %>
-
-  
-
   <%= f.submit %>
+<% end %>

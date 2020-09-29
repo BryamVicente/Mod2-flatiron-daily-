@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_28_180152) do
+ActiveRecord::Schema.define(version: 2020_09_29_162414) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -19,10 +19,11 @@ ActiveRecord::Schema.define(version: 2020_09_28_180152) do
     t.string "author"
     t.string "description"
     t.string "content"
-    t.string "publishedat"
+    t.string "publishedAt"
     t.string "url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "urlToImage"
   end
 
   create_table "favorites", force: :cascade do |t|
@@ -38,7 +39,7 @@ ActiveRecord::Schema.define(version: 2020_09_28_180152) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "userinterests", force: :cascade do |t|
+  create_table "user_interests", force: :cascade do |t|
     t.integer "user_id"
     t.integer "interest_id"
     t.datetime "created_at", precision: 6, null: false
@@ -50,6 +51,8 @@ ActiveRecord::Schema.define(version: 2020_09_28_180152) do
     t.integer "age"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "password_digest"
+    t.string "username"
   end
 
 end

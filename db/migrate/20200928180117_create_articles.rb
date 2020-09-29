@@ -7,7 +7,7 @@ class CreateArticles < ActiveRecord::Migration[6.0]
       t.string :author
       t.string :description
       t.string :content
-      t.string :publishedat
+      t.string :publishedAt
       t.string :url
 
       t.timestamps
