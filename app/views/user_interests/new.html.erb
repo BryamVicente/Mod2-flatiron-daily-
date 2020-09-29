@@ -1,7 +1,15 @@
-<h1>Userinterests#new</h1>
+<h1>What kind of news interests you?</h1>
 
-<%= form_for @user_interest do |f| %>
-  <%= f.label :interest_id %>
-  <%= f.collection_select :interest_id, Interest.all, :id, :topic %>
-  <%= f.submit %>
+<%= form_tag user_interests_path do %>
+  <% 3.times do  %>
+    <%= label_tag "Select Interest" %>
+    <select name="user_interest[][interest_id]" > 
+      <% Interest.all.each do |interest| %>
+        <option value="<%= interest.id %>"> <%= interest.topic%> </option>
+      <% end %>
+    </select>
+  <% end  %>
+
+  <%= submit_tag %>
 <% end %>
+

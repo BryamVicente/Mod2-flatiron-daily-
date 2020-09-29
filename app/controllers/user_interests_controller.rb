@@ -2,6 +2,7 @@ class UserInterestsController < ApplicationController
   def index
     @user_interests = @current_user.user_interests 
     @interests = Interest.all
+    @articles = Article.all
   end
 
 
@@ -10,8 +11,16 @@ class UserInterestsController < ApplicationController
   end
 
   def create
-    user_interest = @current_user.user_interests.create(user_interest_params)
-    redirect_to article_path
+    params[:user_interest].each do |ui|
+      @current_user.user_interests.create(interest_id: ui[:interest_id])
+    end
+      redirect_to user_path(@current_user)
+    # if user_interest.valid?
+    #   redirect_to interest_path(user_interest.interest)
+    # else 
+    #   flash[:my_errors] = user_interest.errors.full_messages
+    #   redirect_to new_user_interest_path
+    # end 
   end
 
   private 

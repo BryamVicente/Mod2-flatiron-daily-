@@ -13,10 +13,10 @@ class UsersController < ApplicationController
       @user = User.create(user_params)
       if @user.valid?
           session[:user] = @user.id
-          redirect_to new_interest_path
+          redirect_to new_user_interest_path
       else
         flash[:my_errors] = @user.errors.full_messages
-        redirect_to new_user_interest_path
+        redirect_to new_user_path
       end
   end
 

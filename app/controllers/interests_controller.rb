@@ -1,7 +1,6 @@
 class InterestsController < ApplicationController
   def index
-    @interests = Interest.all
-    @articles = Article.all
+    @current_user.interested_topics
   end
 
   def show

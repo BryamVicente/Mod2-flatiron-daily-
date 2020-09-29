@@ -1,2 +1,7 @@
-
-
+<ul>
+<% @articles.each do |article| %>
+    <% if article.category == "Technology" %>
+    <li> <%= article.title + " " + article.publishedAt %> </li>
+    <% end %>
+<% end %>
+</ul>
