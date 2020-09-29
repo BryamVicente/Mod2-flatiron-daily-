@@ -1,13 +1,25 @@
-<h1> <%= @current_user.name %> </h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1> <%= @current_user.name %>'s Homepage </h1>
 
+<!-- 
 <% @current_user.interests.each do |interest| %>
-<p> <%= interest.topic %> </p>
+    <%= interest.topic %>%
 <% end %>
-
-<ul>
+-->
+<!-- 
 <% @current_user.interested_topics.map do |art| %> 
-<li> <%= art.title %> </li>
-<% end %>
-</ul>
+    <%= art.category %>
+    <br><br>
+    <li> <%= art.title %> </li>
+    <img src="<%= art.urlToImage%>" alt= "Article Picture">
+    <br>
+    <% end %>
+-->
 
+<div class="index-container">
+  <% @current_user.interested_topics.map do |art| %>
+    <div class="index-card">
+      <h3><%= link_to art.title, art.url %></h3>
+      <img src="<%= art.urlToImage %>" alt="<%art.title%>" class="index-img">
+    </div>
+  <% end %>
+</div>
