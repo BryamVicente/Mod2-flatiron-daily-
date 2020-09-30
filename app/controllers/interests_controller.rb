@@ -18,20 +18,6 @@ class InterestsController < ApplicationController
     @interest = Interest.find(params[:id])
   end 
 
-  def update 
-    @interest = Interest.find(params[:id])
-    @interest.update(interest_params)
-    
-    redirect_to interest_path(@interest)
-  end 
-
-  def destroy 
-    @interest = Interest.find(params[:id])
-    @interest.destroy
-
-    redirect_to interests_path
-    
-  end 
 
   private 
 

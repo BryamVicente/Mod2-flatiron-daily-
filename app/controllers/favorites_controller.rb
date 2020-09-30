@@ -29,6 +29,7 @@ class FavoritesController < ApplicationController
     
     # redirect_to user_path(favorite.user)
     redirect_to favorite_path
+    
   end 
 
   def destroy 
@@ -36,6 +37,7 @@ class FavoritesController < ApplicationController
     @favorite.destroy
 
     redirect_to user_path(favorite.user)
+    
   end 
 
   private 
