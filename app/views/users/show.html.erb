@@ -1,10 +1,10 @@
 <h1> <%= @current_user.name %>'s Homepage </h1>
 
-<!-- 
+
 <% @current_user.interests.each do |interest| %>
-    <%= interest.topic %>%
+    <%= interest.topic %>
 <% end %>
--->
+
 <!-- 
 <% @current_user.interested_topics.map do |art| %> 
     <%= art.category %>
@@ -19,7 +19,18 @@
   <% @current_user.interested_topics.map do |art| %>
     <div class="index-card">
       <h3><%= link_to art.title, art.url %></h3>
-      <img src="<%= art.urlToImage %>" alt="<%art.title%>" class="index-img">
+      <img style="max-width: 200px;"src="<%= art.urlToImage %>" alt="<%art.title%>" class="index-img">
     </div>
   <% end %>
 </div>
+
+<!--
+<dl>
+  <% @current_user.interests.each do |interest| %>
+      <dt> <%= interest.topic %> </dt>
+  <% @current_user.interested_topics.map do |art| %>
+    <dd><%= link_to art.title, art.url %></dd>
+  <% end %>
+  <% end %>
+</dl>
+-->

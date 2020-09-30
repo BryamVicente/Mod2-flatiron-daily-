@@ -1,4 +1,6 @@
 class UserInterestsController < ApplicationController
+  before_action :find_user_interest, only: [:update, :edit, :destroy]
+
   def index
     @user_interests = @current_user.user_interests 
     @interests = Interest.all
@@ -15,15 +17,25 @@ class UserInterestsController < ApplicationController
       @current_user.user_interests.create(interest_id: ui[:interest_id])
     end
       redirect_to user_path(@current_user)
-    # if user_interest.valid?
-    #   redirect_to interest_path(user_interest.interest)
-    # else 
-    #   flash[:my_errors] = user_interest.errors.full_messages
-    #   redirect_to new_user_interest_path
-    # end 
   end
 
+  def edit 
+  end 
+
+  def update 
+    @user_interest.update(interest_params)
+    redirect_to user_path(@user)
+  end 
+
+  def destroy 
+    @user_interest.destroy
+    redirect_to user_path(@user)
+  end 
+
   private 
+  def find_user_interest
+    @user_interest = UserInterest.find(params[:id])
+  end
 
   def user_interest_params
     params.require(:user_interest).permit(:user_id, :interest_id)
