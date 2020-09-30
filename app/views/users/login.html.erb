@@ -1,3 +1,4 @@
+<a href="/users/new” class= "button" >Sign Up</a>
 <h1>Hello, Please Login!</h1>
 
 <% if flash[:my_errors]%>
@@ -10,5 +11,7 @@
     <%= label_tag :password %>
     <%= password_field_tag :password %>
     <%= submit_tag "Log in!" %>
+
 <% end %>
+
 

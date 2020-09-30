@@ -1,7 +1,8 @@
 <!DOCTYPE html>
+
 <html>
   <head>
-    <title>FlatironDaily</title>
+    <title>Flatiron Daily</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,7 +14,7 @@
   <nav>
     
       <% if logged_in? %>
-        LOGGED IN AS: <%= @current_user.name %>
+        Hello: <%= @current_user.name %>
         <%= button_to "LOG OUT HERE", "/logout", method: :delete %>
       <% else %>
         <%= link_to "Login Page", login_path %>

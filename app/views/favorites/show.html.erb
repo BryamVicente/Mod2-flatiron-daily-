@@ -1,2 +1,13 @@
 <h1>Favorites#show</h1>
-<p>Find me in app/views/favorites/show.html.erb</p>
+
+
+<ol>
+    <% @current_user.favorites.each do |fav| %>
+        <li>
+            <%= fav.article.title %>
+            <%= button_to "Delete", favorite_path, method: :delete %>
+        </li>
+    <% end %>
+</ol>
+
+

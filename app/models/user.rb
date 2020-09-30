@@ -4,8 +4,8 @@ class User < ApplicationRecord
     has_many :user_interests 
     has_many :interests, through: :user_interests
 
-
-    validates :name, uniqueness: true, presence: true
+    validates :username, uniqueness: true 
+    validates :name, uniqueness: true 
     validates :password, length: {in: 6..15, message: "Must be 5-13 characters long!"}
 
     has_secure_password
