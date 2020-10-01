@@ -1,0 +1,11 @@
+<h1>Favorites Index</h1>
+
+
+<ol>
+    <% @current_user.favorites.each do |fav| %>
+        <li>
+            <%= link_to fav.article.title, favorite_path(fav) %>
+            
+        </li>
+    <% end %>
+</ol>

@@ -1,2 +1,11 @@
 <h1>Userinterests#show</h1>
-<p>Find me in app/views/userinterests/show.html.erb</p>
+
+<
+
+<p>user: <%= @user_interest.user.name %></p>
+<p>interest: <%= @user_interest.interest.topic %></p>
+
+
+<%= button_to "DELETE", user_interest_path(@user_interest), method: :delete %>
+
+

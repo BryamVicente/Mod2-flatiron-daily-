@@ -1,7 +1,12 @@
 class FavoritesController < ApplicationController
-  # def index
-  #   @favorites = Favorite.all
-  # end
+  def index
+    @favorites = Favorite.all
+  end
+
+  def show
+    @favorite = Favorite.find(params[:id])
+
+  end 
 
   def new
     @favorite = Favorite.new
@@ -20,6 +25,7 @@ class FavoritesController < ApplicationController
   end
 
   def edit 
+    # byebug
     @favorite = Favorite.find(params[:id])
   end 
 
@@ -28,7 +34,7 @@ class FavoritesController < ApplicationController
     @favorite.update(favorite_params)
     
     # redirect_to user_path(favorite.user)
-    redirect_to favorite_path
+    redirect_to favorite_path(@favorite)
     
   end 
 
@@ -36,7 +42,8 @@ class FavoritesController < ApplicationController
     @favorite = Favorite.find(params[:id])
     @favorite.destroy
 
-    redirect_to user_path(favorite.user)
+    # redirect_to user_path(favorite.user)
+    redirect_to favorites_path
     
   end 
 
