@@ -6,7 +6,11 @@
 <p> Published: <%= time.strftime("%I:%M %p on %B %d") %> </p>
 <img style="max-width: 200px;"src="<%= @favorite.article.urlToImage %>" alt="<%@favorite.article.title%>" class="index-img">
 
-
-<%= button_to "DELETE", favorite_path(@favorite), method: :delete %>  
-<%= button_to "Edit Favorites", edit_favorite_path, method: :get %>
+<br>
+<%= button_to "Delete", favorite_path(@favorite), method: :delete %>  
+<br>
 <%= button_to "Back", favorites_path, method: :get %>
+
+<!--
+<%= button_to "Edit Favorites", edit_favorite_path, method: :get %>
+-->

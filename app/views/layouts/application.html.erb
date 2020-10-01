@@ -24,10 +24,14 @@
         <% end %>
     </div>
     <div style="horizontal" class='nav-horizontal'>
+    <% if logged_in? %>
       <%= link_to "Home", "/users/show" %>
       <%= link_to "Interests", user_interests_path %>
       <%= link_to "Favorites", favorites_path %>
       <%= link_to "Sign Out", "/logout", method: :delete %>
+    <% else %>
+    <% end %>
+
     <br>
   </div>
 </nav>
