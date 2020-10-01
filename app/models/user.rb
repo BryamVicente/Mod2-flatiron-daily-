@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
     validates :username, uniqueness: true 
     validates :name, uniqueness: true 
-    validates :password, length: {in: 6..15, message: "Must be 5-13 characters long!"}
+    validates :password, length: {in: 6..15, message: "Must be 6-15 characters long!"}
 
     has_secure_password
 
