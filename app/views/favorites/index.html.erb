@@ -3,7 +3,7 @@
 <ol>
     <% @current_user.favorites.each do |fav| %>
         <li>
-            <%= fav.article.title %>
+            <%= link_to fav.article.title, favorite_path(fav), {:style=>'color:#000000;', :class => "css_class"} %>
         </li>
     <% end %>
 </ol>

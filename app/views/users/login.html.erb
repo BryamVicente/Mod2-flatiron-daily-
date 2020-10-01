@@ -16,7 +16,7 @@
 -->
 
 <%= bootstrap_form_tag url: "/login", layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10" do |f| %>
-    <div class="container" width="100px"><%= f.text_field :username %></div>
-    <div class="container"><%= f.password_field :password %></div>
+    <div class="container" width="50px"><%= f.text_field :username %></div>
+    <div class="container" width="50px" ><%= f.password_field :password %></div>
     <div class="container"><%= f.submit "Log in!" %></div>
 <% end %>

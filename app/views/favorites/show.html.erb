@@ -1,7 +1,10 @@
-<h1>Favorites#show</h1>
+<h1><%= link_to @favorite.article.title, @favorite.article.url, {:style=>'color:#000000;', :class => "css_class"} %>
+</h1>
+<h3><%= @favorite.article.category %></h3>
+<%= @favorite.article.author %>
+<% time = @favorite.article.publishedAt = Time.new %> 
+<p> Published: <%= time.strftime("%I:%M %p on %B %d") %> </p>
+<img style="max-width: 200px;"src="<%= @favorite.article.urlToImage %>" alt="<%@favorite.article.title%>" class="index-img">
 
 
-<p> user: <%= @favorite.user.name %> </p>
-<p> article: <%= @favorite.article.title %> </p>
-
-<% button_to "DELETE", favorite_path(@favorite), method: :delete %>
+<%= button_to "DELETE", favorite_path(@favorite), method: :delete %>

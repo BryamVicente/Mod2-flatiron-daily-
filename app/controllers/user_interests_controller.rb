@@ -1,5 +1,5 @@
 class UserInterestsController < ApplicationController
-  before_action :find_user_interest, only: [:update, :edit, :destroy]
+  before_action :find_user_interest, only: [:show, :update, :edit, :destroy]
 
   def index
     @user_interests = @current_user.user_interests 
@@ -7,6 +7,8 @@ class UserInterestsController < ApplicationController
     @articles = Article.all
   end
 
+  def show
+  end
 
   def new
     @user_interests = UserInterest.new
@@ -24,12 +26,12 @@ class UserInterestsController < ApplicationController
 
   def update 
     @user_interest.update(interest_params)
-    redirect_to user_path(@user)
+    redirect_to user_interest_path(@user_interest)
   end 
 
   def destroy 
     @user_interest.destroy
-    redirect_to user_path(@user)
+    redirect_to user_interests_path
   end 
 
   private 

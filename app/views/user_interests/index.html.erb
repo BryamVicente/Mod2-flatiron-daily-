@@ -1,2 +1,9 @@
-<h1>Userinterests#index</h1>
-<p>Find me in app/views/userinterests/index.html.erb</p>
+<h1 style="text-align:center"> <%= @current_user.name %>' Interests </h1>
+
+<ol>
+    <% @current_user.user_interests.each do |user_interest| %>
+        <li>
+            <%= link_to user_interest.interest.topic, user_interest_path(user_interest) %>
+        </li>
+    <% end %>
+</ol>

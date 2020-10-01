@@ -19,17 +19,34 @@
       <h1 >The Flatiron Daily</h1>
     </div>
     <div style="text-align:ceter">
-    <% if logged_in? %>
-        Logged in as: <%= @current_user.name %>
+        <% if logged_in? %>
+          Logged in as: <%= @current_user.name %>
         <% end %>
-    <%= button_to "Sign Out", "/logout", method: :delete %>
+    </div>
+    <div style="horizontal">
+      <%= button_to "Home", "/users/show", method: :get %>
+      <%= button_to "Sign Out", "/logout", method: :delete %>
+
     <br>
   </div>
 </nav>
 
 
-
-
+<!--
+  <%# HOME MENU %>
+  
+    <nav class="navbar navbar-expand-lg">
+    <img class = "logo mr-4" src = "https://lh3.googleusercontent.com/proxy/8MRIGhFjJ9jpODvob2SduI1AuQ9nLqByJBuHljhACp-FdsGeKlFMYHLRK-gvtLOHlzXih-HsnAqJbJLDCp0CtiLakU9BLnTk-Z8-MrlGQ4IGsWvmuAkosFQh3Vxmn6hf1QXLkq5y3H8" alt = "Flatiron Daily" height = 10% width = 10% >
+    <ul class="navbar-nav">
+        <li class="nav-item mr-3 strapline nav-link">Read.it!</li>
+      <% if !@current_user.nil? %>
+        <li class="nav-item mt-3 mr-3"><%= link_to "Interests", user_interests_path, class:"nav-link small-caps" %></li>
+        <li class="nav-item mt-3 mr-3"><%= link_to "Favorites", favorites_path, class:"nav-link small-caps" %></li>
+        <li class="nav-item mt-3 mr-3"><%= link_to "log out", logout_path, {method: 'post', class:"nav-link small-caps flex-end"} %></li>
+        </ul>
+      <% end %>
+      -->
+    
 
 
 
@@ -61,4 +78,7 @@
       <% end %>
     
     </nav>
+
+          <a href="/users/show" class= "btn btn-primary" margin="auto" role="button">Home</a>
+      <a href="/logout" class= "btn btn-primary" margin="auto" role="button">Logout</a>
     -->

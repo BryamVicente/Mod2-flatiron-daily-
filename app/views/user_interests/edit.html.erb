@@ -1,14 +1,11 @@
 
 
 <%= form_tag user_interests_path do %>
-  <% 3.times do  %>
     <%= label_tag "Select Interest" %>
     <select name="user_interest[][interest_id]" > 
       <% Interest.all.each do |interest| %>
         <option value="<%= interest.id %>"> <%= interest.topic%> </option>
       <% end %>
     </select>
-  <% end  %>
-
   <%= submit_tag %>
 <% end %>
