@@ -1,5 +1,5 @@
 <h1 style="text-align:center"> <%= @current_user.name %>'s Homepage </h1>
-<a style="text-center" href="/users_interests/:id/edit" class= "btn btn-primary" role="button">Edit Interests</a>
+<a style="text-center" href="/users_interests/" class= "btn btn-primary" role="button">Interests</a>
 <a style="text-center" href="/favorites" class= "btn btn-primary" role="button">Favorites</a>
 <br>
 
@@ -7,14 +7,14 @@
     <strong><%= interest.topic %></strong>
 <% end %>
 
-<div class="index-container">
+<ul>
   <% @current_user.interested_topics.map do |art| %>
     <div class="index-card">
-      <h5 class="text-justify"><%= link_to art.title, art.url, {:style=>'color:#000000;', :class => "css_class"} %></h5>
-      <img style="max-width: 200px;"src="<%= art.urlToImage %>" alt="<%art.title%>" class="index-img">
+      <li><h5 style="max-width: 1000px;" class="text-justify"><%= link_to art.title, art.url, {:style=>'color:#000000;', :class => "css_class"} %></h5>
+      <img style="max-width: 200px;"src="<%= art.urlToImage %>" alt="<%art.title%>" class="index-img"></li>
     </div>
   <% end %>
-</div>
+</ul>
 
 
 

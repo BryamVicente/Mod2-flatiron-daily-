@@ -11,10 +11,10 @@
   </head>
 
   <body>
-  <nav>
+  <nav style="text-align:right">
     
       <% if logged_in? %>
-        Hello, <%= @current_user.name %>!
+        Logged in as: <%= @current_user.name %>
         <%= button_to "Sign Out", "/logout", method: :delete %>
        
       <% else %>

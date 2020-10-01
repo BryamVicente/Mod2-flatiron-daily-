@@ -79,4 +79,15 @@ general_articles_data["articles"].each do |article|
     add_category.save
 end
 
+# def search_news_by_keyword(keyword)
+#     general_articles_response = RestClient.get("https://newsapi.org/v2/everything?qInTitle=#{keyword}&from=2020-09-01&sortBy=publishedAt&language=en&apiKey=ba9d4840324d432b9175918b1ac64545")
+#     general_articles_data = JSON.parse(general_articles_response)
+#     general_articles_data["articles"].each do |article|
+#         add_category = Article.new(article)
+#         add_category.category = "Keyword"
+#         add_category.save
+#     end
+# end
+# search_news_by_keyword(keyword)
+
 # binding.pry
