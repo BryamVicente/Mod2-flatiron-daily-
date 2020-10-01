@@ -1,12 +1,16 @@
-<h1 style="text-align:center"> <%= @current_user.name %>'s Homepage </h1>
-<a style="text-center" href="/users_interests/" class= "btn btn-primary" role="button">Interests</a>
-<a style="text-center" href="/favorites" class= "btn btn-primary" role="button">Favorites</a>
+<br>
+<h2 style="text-align:center"> <%= @current_user.name %>'s Homepage </h2>
+<a href="/users_interests/" class= "btn btn-primary" margin="auto" role="button">Interests</a>
+<a href="/favorites" class= "btn btn-primary" margin="auto" role="button">Favorites</a>
 <br>
 
+<h4 style="text-align:center"> Your Interests:
 <% @current_user.interests.each do |interest| %>
-    <strong><%= interest.topic %></strong>
+    <strong><%= interest.topic %> |</strong>
 <% end %>
+</h4>
 
+<!--
 <ul>
   <% @current_user.interested_topics.map do |art| %>
     <div class="index-card">
@@ -15,16 +19,24 @@
     </div>
   <% end %>
 </ul>
-
-
-
-<!--
-<dl>
-  <% @current_user.interests.each do |interest| %>
-      <dt> <%= interest.topic %> </dt>
-  <% @current_user.interested_topics.map do |art| %>
-    <dd><%= link_to art.title, art.url %></dd>
-  <% end %>
-  <% end %>
-</dl>
 -->
+<table class="centered highlight" style="margin: 0 50px 100px 50px">
+    <thead>
+        <tr>
+            <th>Category</th>
+            <th>Title</th>
+            <th>Published At</th>
+            <th></th>
+        </tr>
+    </thead>
+    <% @current_user.interested_topics.each do |article| %>
+        <tbody>
+                <td><%= article.category %></td>
+                <td><%= link_to article.title, article.url, {:style=>'color:#000000;', :class => "css_class"} %></td>
+                <td><% time = article.publishedAt = Time.new %>
+                <%= time.strftime("%I:%M %p on %B %d") %> </td>
+                <td><img style="max-width: 200px;"src="<%= article.urlToImage %>" alt="<%article.title%>" class="index-img"></td>
+            </tr>
+        </tbody>
+    <% end %>
+</table>

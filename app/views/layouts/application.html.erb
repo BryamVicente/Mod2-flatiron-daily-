@@ -11,6 +11,45 @@
   </head>
 
   <body>
+
+
+<nav style="text-align:center" class="nav navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <h1 >The Flatiron Daily</h1>
+    </div>
+    <div style="text-align:ceter">
+    <% if logged_in? %>
+        Logged in as: <%= @current_user.name %>
+        <% end %>
+    <%= button_to "Sign Out", "/logout", method: :delete %>
+    <br>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <%= yield %>
+  </body>
+</html>
+
+
+<!-- 
   <nav style="text-align:right">
     
       <% if logged_in? %>
@@ -22,6 +61,4 @@
       <% end %>
     
     </nav>
-    <%= yield %>
-  </body>
-</html>
+    -->

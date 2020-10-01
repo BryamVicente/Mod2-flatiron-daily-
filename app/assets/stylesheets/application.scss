@@ -15,6 +15,7 @@
  // Custom bootstrap variables must be set or imported *before* bootstrap.
  @import "bootstrap";
  @import "rails_bootstrap_forms";
+@import "https://fonts.googleapis.com/icon?family=Material+Icons";
 
 .button1{
 background: white;
@@ -34,3 +35,41 @@ transition: 1s;
     color: white;
     transition: 1s;
     }
+
+table {
+border-collapse: separate;
+border-spacing: 0px 10px;
+}
+
+th {
+color: black;
+}
+
+th,
+td {
+text-align: center;
+padding: 15px;
+}
+
+nav {
+    display: block;
+  }
+
+.navbar-inverse {
+background: rgb(209, 207, 207);
+}
+
+header, footer {
+    background-color: lightgray;
+    border: solid 1px black;
+  }
+
+  header nav {
+    float: right;
+    margin-right: 5px;
+  }
+  
+  header nav li {
+    display: inline;
+    font-size: 12px;
+  }     
