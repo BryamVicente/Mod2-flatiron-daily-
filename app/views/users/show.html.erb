@@ -1,8 +1,7 @@
-This is the newest version
+
 <br>
 <h2 style="text-align:center"> <%= @current_user.name %>'s Homepage </h2>
-<a href="/user_interests" class= "btn btn-primary" style="text-align:ceter" role="button">Interests</a>
-<a href="/favorites" class= "btn btn-primary" style="text-align:ceter" role="button">Favorites</a>
+
 <br>
 
 <h4 style="text-align:center"> Your Interests:
@@ -11,16 +10,7 @@ This is the newest version
 <% end %>
 </h4>
 
-<!--
-<ul>
-  <% @current_user.interested_topics.map do |art| %>
-    <div class="index-card">
-      <li><h5 style="max-width: 1000px;" class="text-justify"><%= link_to art.title, art.url, {:style=>'color:#000000;', :class => "css_class"} %></h5>
-      <img style="max-width: 200px;"src="<%= art.urlToImage %>" alt="<%art.title%>" class="index-img"></li>
-    </div>
-  <% end %>
-</ul>
--->
+
 <table class="centered highlight" style="margin: 0 50px 100px 50px">
     <thead>
         <tr>
@@ -41,11 +31,3 @@ This is the newest version
         </tbody>
     <% end %>
 </table>
-
-<!-- Target -->
-<textarea id="bar">Mussum ipsum cacilds...</textarea>
-
-<!-- Trigger -->
-<button class="clipboard-btn" data-clipboard-action="copy" data-clipboard-target="#bar">
-    Copy Link
-</button>

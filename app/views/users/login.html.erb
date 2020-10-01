@@ -5,15 +5,7 @@
 <% if flash[:my_errors]%>
     <br> <p style="color:red"><%= flash[:my_errors]%></p>
 <% end %>
-<!--
-<%= form_tag "/login" do %>
-    <%= label_tag :username %>
-    <%= text_field_tag :username %>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-    <%= submit_tag "Log in!" %>
-<% end %>
--->
+
 
 <%= bootstrap_form_tag url: "/login", layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10" do |f| %>
     <div class="container" width="50px"><%= f.text_field :username %></div>

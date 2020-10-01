@@ -15,7 +15,8 @@ class FavoritesController < ApplicationController
   def create
     favorite = @current_user.favorites.create(favorite_params)
     if favorite.valid?
-      redirect_to user_path(favorite.user)
+    
+      redirect_to favorites_path
     else 
       flash[:my_errors] = favorite.errors.full_messages
       redirect_to new_favorite_path
@@ -28,7 +29,7 @@ class FavoritesController < ApplicationController
 
   def update 
     @favorite.update(favorite_params)
-    # redirect_to user_path(favorite.user)
+  
     redirect_to favorite_path(@favorite)
   end 
 

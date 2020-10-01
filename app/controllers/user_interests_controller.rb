@@ -18,7 +18,7 @@ class UserInterestsController < ApplicationController
     params[:user_interest].each do |ui|
       @current_user.user_interests.create(interest_id: ui[:interest_id])
     end
-      redirect_to user_path(@current_user)
+      redirect_to user_interests_path
   end
 
   def edit 

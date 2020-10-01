@@ -1,4 +1,4 @@
-<h1 style="text-align:center"> <%= @current_user.name %>' Favorites </h1>
+<h1 style="text-align:center"> <%= @current_user.name %>'s Favorites </h1>
 
 <ol>
     <% @current_user.favorites.each do |fav| %>
@@ -9,3 +9,4 @@
 </ol>
 
 
+<%= button_to "Add Favorites", new_favorite_path, method: :get %>
