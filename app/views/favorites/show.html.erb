@@ -1,13 +1,7 @@
 <h1>Favorites#show</h1>
 
 
-<ol>
-    <% @current_user.favorites.each do |fav| %>
-        <li>
-            <%= fav.article.title %>
-            <%= button_to "Delete", favorite_path, method: :delete %>
-        </li>
-    <% end %>
-</ol>
+<p> user: <%= @favorite.user.name %> </p>
+<p> article: <%= @favorite.article.title %> </p>
 
-
+<% button_to "DELETE", favorite_path(@favorite), method: :delete %>

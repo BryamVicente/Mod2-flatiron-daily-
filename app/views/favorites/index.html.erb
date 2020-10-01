@@ -1,0 +1,9 @@
+
+
+<ol>
+    <% @current_user.favorites.each do |fav| %>
+        <li>
+            <%= fav.article.title %>
+        </li>
+    <% end %>
+</ol>

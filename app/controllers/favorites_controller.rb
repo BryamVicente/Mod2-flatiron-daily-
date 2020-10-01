@@ -1,7 +1,13 @@
 class FavoritesController < ApplicationController
-  # def index
-  #   @favorites = Favorite.all
-  # end
+  # before_action :find_favorite, only: [:show, :edit, :update, :destroy]
+  
+  def index
+    @favorites = @current_user.favorites
+  end
+
+  def show
+    @favorite = Favorite.find(params[:id])
+  end
 
   def new
     @favorite = Favorite.new
@@ -16,7 +22,6 @@ class FavoritesController < ApplicationController
       flash[:my_errors] = favorite.errors.full_messages
       redirect_to new_favorite_path
     end 
-
   end
 
   def edit 
@@ -24,7 +29,6 @@ class FavoritesController < ApplicationController
   end 
 
   def update 
-    @favorite = Favorite.find(params[:id])
     @favorite.update(favorite_params)
     
     # redirect_to user_path(favorite.user)
@@ -33,7 +37,6 @@ class FavoritesController < ApplicationController
   end 
 
   def destroy 
-    @favorite = Favorite.find(params[:id])
     @favorite.destroy
 
     redirect_to user_path(favorite.user)

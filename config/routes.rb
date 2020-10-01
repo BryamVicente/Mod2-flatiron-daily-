@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :interests
   resources :articles
   resources :user_interests
+
+  root 'welcome#home'
   get "/login", to: "users#login", as: "login"
   post "/login", to: "users#handle_login"
   delete "/logout", to: "users#logout"

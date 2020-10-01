@@ -1,17 +1,22 @@
 <a href="/users/new” class= "button" >Sign Up</a>
-<h1>Hello, Please Login!</h1>
+<br>
+<h1 style="text-align:center">Hello, Please Login!</h1>
 
 <% if flash[:my_errors]%>
     <br> <p style="color:red"><%= flash[:my_errors]%></p>
 <% end %>
-
-<%= form_tag "/login" do  %>
+<!--
+<%= form_tag "/login" do %>
     <%= label_tag :username %>
     <%= text_field_tag :username %>
     <%= label_tag :password %>
     <%= password_field_tag :password %>
     <%= submit_tag "Log in!" %>
-
 <% end %>
+-->
 
-
+<%= bootstrap_form_tag url: "/login", layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10" do |f| %>
+    <div class="container" width="100px"><%= f.text_field :username %></div>
+    <div class="container"><%= f.password_field :password %></div>
+    <div class="container"><%= f.submit "Log in!" %></div>
+<% end %>

@@ -10,6 +10,27 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+
+ // Custom bootstrap variables must be set or imported *before* bootstrap.
+ @import "bootstrap";
+ @import "rails_bootstrap_forms";
+
+.button1{
+background: white;
+width: 125px;
+font-size: 10pt;
+color: black;
+font-weight: 700;
+border-radius: 30px;
+border: 2px solid gray;
+transition: 1s;
+}
+
+.button1:hover{
+    transform: scale(1.1);
+    border: none;
+    background-color: black;
+    color: white;
+    transition: 1s;
+    }
