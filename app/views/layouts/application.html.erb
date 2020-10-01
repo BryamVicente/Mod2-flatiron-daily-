@@ -23,12 +23,11 @@
           Logged in as: <%= @current_user.name %>
         <% end %>
     </div>
-    <div style="horizontal">
-      <%= button_to "Home", "/users/show", method: :get %>
-      <%= button_to "Interests", user_interests_path, method: :get %>
-      <%= button_to "Favorites", favorites_path, method: :get %>
-      <%= button_to "Sign Out", "/logout", method: :delete %>
-
+    <div style="horizontal" class='nav-horizontal'>
+      <%= link_to "Home", "/users/show" %>
+      <%= link_to "Interests", user_interests_path %>
+      <%= link_to "Favorites", favorites_path %>
+      <%= link_to "Sign Out", "/logout", method: :delete %>
     <br>
   </div>
 </nav>

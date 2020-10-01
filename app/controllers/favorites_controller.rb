@@ -14,6 +14,7 @@ class FavoritesController < ApplicationController
 
   def create
     favorite = @current_user.favorites.create(favorite_params)
+    # byebug
     if favorite.valid?
     
       redirect_to favorites_path
@@ -45,6 +46,6 @@ class FavoritesController < ApplicationController
   end
 
   def favorite_params
-    params.require(:favorite).permit(:user_id, :article_id)
+    params.permit(:article_id)
   end
 end

@@ -23,7 +23,7 @@
     <% @current_user.interested_topics.each do |article| %>
         <tbody>
                 <td><%= article.category %></td>
-                <td><%= link_to article.title, article.url, {:style=>'color:#000000;', :class => "css_class"} %></td>
+                <td><%= link_to article.title, article.url, {:style=>'color:#000000;', :class => "css_class"} %> <%= button_to "+", "/favorites/?article_id=#{article.id}" %></td>
                 <td><% time = article.publishedAt = Time.new %>
                 <%= time.strftime("%I:%M %p on %B %d") %> </td>
                 <td><img style="max-width: 200px;"src="<%= article.urlToImage %>" alt="<%article.title%>" class="index-img"></td>

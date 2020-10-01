@@ -73,3 +73,22 @@ header, footer {
     display: inline;
     font-size: 12px;
   }     
+
+  
+  div.nav-horizontal {
+    background-color: darkgrey;
+    height: 40px;
+    line-height: 40px;
+    margin-top: 15px;
+  }
+
+  div.nav-horizontal a { 
+    text-decoration: none;
+    color: rgb(177, 10, 10);
+    padding: 10px 20px;
+  }
+
+  div.nav-horizontal a:hover {
+    background-color: blue;
+    transition: 1s;
+  }
