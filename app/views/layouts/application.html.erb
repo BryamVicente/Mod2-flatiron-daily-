@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-
 <html>
   <head>
-    <title>Flatiron Daily</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,16 +11,30 @@
 
 
 <nav style="text-align:center" class="nav navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <h1 >The Flatiron Daily</h1>
+    
+    <div>
+    <br><br>
+      <a href="index.html">
+        <%= image_tag("white 1.png", :class => "logo", :alt => "Logo White") %>
+      </a>
     </div>
-    <div style="text-align:ceter">
+    <br>
+  <div class="container-fluid">
+    <div style="color: white" style="text-align:center">
+        <h4><%= @time.strftime("%I:%M %p on %B %d") %></h4>
         <% if logged_in? %>
           Logged in as: <%= @current_user.name %>
         <% end %>
     </div>
-    <div style="horizontal" class='nav-horizontal'>
+<br>
+      <!--Weather-->
+        <a class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/?unit=us" data-label_1="NEW YORK" data-label_2="WEATHER" data-font="Noto Serif" data-icons="Climacons Animated" data-theme="original" data-basecolor="rgb(47, 79, 79)" data-accent="rgb(47, 79, 79)" data-highcolor="#ffffff" data-lowcolor="#ffffff" data-suncolor="#ffffff" data-cloudcolor="#ffffff" data-cloudfill="rgb(47, 79, 79)" data-raincolor="#ffffff" data-snowcolor="#ffffff" >NEW YORK WEATHER</a>
+        <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+        </script>
+
+
+    <div style="color: white" class='nav-horizontal'>
     <% if logged_in? %>
       <%= link_to "Home", "/users/show" %>
       <%= link_to "Interests", user_interests_path %>
@@ -31,15 +42,22 @@
       <%= link_to "Sign Out", "/logout", method: :delete %>
     <% else %>
     <% end %>
-
     <br>
   </div>
 </nav>
 
     <%= yield %>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
   </body>
+
+<div class="footer">
+  <p>A Ruby on Rails web application built by Bryam V. and Mushfi C.</p>
+</div>
 </html>
-
-
-
-  

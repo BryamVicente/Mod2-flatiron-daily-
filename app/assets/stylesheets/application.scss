@@ -13,19 +13,60 @@
  */
 
  // Custom bootstrap variables must be set or imported *before* bootstrap.
- @import "bootstrap";
- @import "rails_bootstrap_forms";
+@import "bootstrap";
+@import "rails_bootstrap_forms";
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
+@import url("https://use.typekit.net/pmf5hqs.css");
 
-.button1{
-background: white;
-width: 125px;
-font-size: 10pt;
-color: black;
-font-weight: 700;
-border-radius: 30px;
-border: 2px solid gray;
-transition: 1s;
+
+tr:hover {
+  background-color: whitesmoke;
+}
+
+
+body{
+  font-family: "schoolbook";
+  color: #000000
+}
+
+@font-face {
+  font-family: 'BodoniXT copy';
+  src: url('/path-to/Bodoni XT copy.ttf')
+}
+
+@font-face {
+  font-family: 'HKGrotesk-Regular';
+  src: url('/path-to/HKGrotesk-Regular.otf')
+}
+
+.center {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.form-group {
+  align-content: center;
+}
+
+.box-center {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.button_to {
+  margin-left: auto;
+  margin-right: auto;
+  width: 125px;
+  font-size: 10pt;
+  color: black;
+  font-weight: 700;
+  transition: 1s;
 }
 
 .button1:hover{
@@ -35,6 +76,13 @@ transition: 1s;
     color: white;
     transition: 1s;
     }
+
+.sticky {
+    background: white;
+    position: fixed;
+    right: 0;
+}
+
 
 table {
 border-collapse: separate;
@@ -56,13 +104,24 @@ nav {
   }
 
 .navbar-inverse {
-background: rgb(209, 207, 207);
+background: darkslategray;
+display: block;
+text-align: center;
+margin-left: auto;
+margin-right: auto;
 }
 
-header, footer {
-    background-color: lightgray;
-    border: solid 1px black;
-  }
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: whitesmoke;
+  color: black;
+  line-height: 65px;
+  height: 65px;
+  text-align: center;
+}
 
   header nav {
     float: right;
@@ -76,7 +135,6 @@ header, footer {
 
   
   div.nav-horizontal {
-    background-color: darkgrey;
     height: 40px;
     line-height: 40px;
     margin-top: 15px;
@@ -84,11 +142,45 @@ header, footer {
 
   div.nav-horizontal a { 
     text-decoration: none;
-    color: rgb(177, 10, 10);
+    color: white;
     padding: 10px 20px;
   }
 
   div.nav-horizontal a:hover {
-    background-color: blue;
+    background-color: black;
+    color: white;
     transition: 1s;
   }
+
+
+  div.button-horizontal {
+    height: 40px;
+    line-height: 40px;
+    margin-top: 15px;
+    padding-left: 30px;
+  }
+
+  div.button-horizontal:hover {
+    color: white;
+    transition: 1s;
+  }
+
+  .a {
+    color: black;
+  }
+
+  .navbar-brand {
+    padding: 0px;
+  }
+  .navbar-brand>img {
+    height: 100%;
+    padding: 15px;
+    width: auto;
+  }
+
+  .logo {
+    align-self: center;
+    margin: auto;
+    width: 50%;
+  }
+

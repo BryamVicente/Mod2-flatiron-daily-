@@ -3,6 +3,7 @@ class FavoritesController < ApplicationController
   
   def index
     @favorites = @current_user.favorites
+
   end
 
   def show
@@ -17,10 +18,10 @@ class FavoritesController < ApplicationController
     # byebug
     if favorite.valid?
     
-      redirect_to favorites_path
+      redirect_to user_path(@current_user)
     else 
       flash[:my_errors] = favorite.errors.full_messages
-      redirect_to new_favorite_path
+      redirect_to user_path(@current_user)
     end 
   end
 

@@ -1,26 +1,48 @@
-<h1>Sign Up</h1>
+<br>
+<div>
+<h1 class="center">Sign Up</h1>
+</div>
 
 <% if flash[:my_errors]%>
     <br> <p style="color:red"><%= flash[:my_errors]%></p>
 <% end %>
+<div class="col-xlg">
 
-<%= form_for @user do |f| %>
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-    <br><br>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <br><br>
-    <%= f.label :age %>
-    <%= f.number_field :age %>
-    <br><br>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
-    <br><br>
-    <%= f.label :password_confirmation %>
-    <%= f.password_field :password_confirmation %>
-    
-    <%= f.submit "Register" %>
-<% end %>
+    <div align="center" class="col-md-8">
+        <%= form_for @user do |f| %>
+        <div class="container">
+                <div class="row">
+                    <div style="margin: auto" align="center">
+                        <div align="center" class="form-control">
+                            <div class="form-group">
+                                <%= f.label :username %>
+                                <%= f.text_field :username %>
+                            </div>
+                            <div class="form-group">
+                                <%= f.label :name %>
+                                <%= f.text_field :name %>
+                            </div>
+                            <div class="form-group">
+                                <%= f.label :age %>
+                                <%= f.number_field :age %>
+                            </div>
+                            <div class="form-group">
+                                <%= f.label :password %>
+                                <%= f.password_field :password %>
+                            </div>
+                            <div class="form-group">
+                                <%= f.label :password_confirmation %>
+                                <%= f.password_field :password_confirmation %>
+                            </div>
+                            <%= f.submit "Register" %>
+                        
+                    </div>
+                </div>
+        <% end %>
+    </div>       
+
+
 <br>
-<a href = "/login" >back</a>
+<div class="button">
+    <a href = "/login" >back</a>
+</div>

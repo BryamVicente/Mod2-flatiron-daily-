@@ -1,16 +1,23 @@
-<h1><%= link_to @favorite.article.title, @favorite.article.url, {:style=>'color:#000000;', :class => "css_class"} %>
-</h1>
-<h3><%= @favorite.article.category %></h3>
-<%= @favorite.article.author %>
+<br>
+<div style="padding-left: 30px">
+<h2><%= link_to @favorite.article.title, @favorite.article.url, {:style=>'color:#000000;', :class => "css_class"} %>
+</h2>
+<h2><%= @favorite.article.author %></h2>
+<p>Category: <%= @favorite.article.category %></p>
 <% time = @favorite.article.publishedAt = Time.new %> 
 <p> Published: <%= time.strftime("%I:%M %p on %B %d") %> </p>
-<img style="max-width: 200px;"src="<%= @favorite.article.urlToImage %>" alt="<%@favorite.article.title%>" class="index-img">
+<p style="text-align:justified">"<%= @favorite.article.content%>"</p>
+<img style="max-width: 800px;"src="<%= @favorite.article.urlToImage %>" alt="<%@favorite.article.title%>">
+</div>
+
+
+
+
+
+</p>
 
 <br>
+<div style="horizontal" class='button-horizontal'>
 <%= button_to "Delete", favorite_path(@favorite), method: :delete %>  
-<br>
 <%= button_to "Back", favorites_path, method: :get %>
-
-<!--
-<%= button_to "Edit Favorites", edit_favorite_path, method: :get %>
--->
+</div>

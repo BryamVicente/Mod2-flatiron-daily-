@@ -1,7 +1,12 @@
-<h1> Interest: <%= @user_interest.interest.topic %> </h1>
+<br>
+<h1 style="text-align:center"> Interest: <%= @user_interest.interest.topic %> </h1>
 
 
 
 <%= button_to "DELETE", user_interest_path(@user_interest), method: :delete %>
-<%= button_to "Edit interests", edit_user_interest_path, method: :get %>
 <%= button_to "Back", user_interests_path, method: :get %>
+
+
+<!--
+<%= button_to "Edit interests", edit_user_interest_path, method: :get %>
+>

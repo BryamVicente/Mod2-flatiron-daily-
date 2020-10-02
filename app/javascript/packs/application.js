@@ -22,10 +22,3 @@ require("channels")
 //= require clipboard
 //= require jquery
 //= require jquery_ujs
-
-$(document).ready(function(){  
-  
-    var clipboard = new Clipboard('.clipboard-btn');
-    console.log(clipboard);
-      
-  });

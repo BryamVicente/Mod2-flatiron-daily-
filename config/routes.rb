@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :users
+  resources :users do
+    resources :favorites
+  end
   resources :favorites
   resources :interests
   resources :articles
