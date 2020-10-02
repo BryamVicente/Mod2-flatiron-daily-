@@ -28,7 +28,7 @@
                 <td><% time = article.publishedAt = Time.new %>
                 <%= time.strftime("%I:%M %p on %B %d") %> </td>
                 <td><img style="max-width: 200px;"src="<%= article.urlToImage %>" alt="<%article.title%>" class="index-img"></td>
-                <td> <%= button_to "Add to Favorites", "/favorites/?article_id=#{article.id}" %> </td>
+                <td class="btn btn-default"> <%= button_to "Add to Favorites", "/favorites/?article_id=#{article.id}" %> </td>
             </tr>
         </tbody>
     <% end %>
